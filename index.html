@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: orange;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+  </style>
+  <body>
+    <button>Start</button>
+  </body>
+  <script>
+    let body = document.querySelector("body");
+    let button = document.querySelector("button");
+
+    let button1 = document.createElement("button");
+    let button2 = document.createElement("button");
+    let button3 = document.createElement("button");
+    let button4 = document.createElement("button");
+    let p = document.createElement("p");
+
+    let arr = [
+      {
+        questions: "true + false",
+        answers: ["hariu1", "hariu2", "hariu3", "hariu4"],
+        correct: "hariu1",
+      },
+      {
+        questions: "a=a",
+        answers: ["hariu1", "hariu2", "hariu3", "hariu4"],
+        correct: "hariu1",
+      },
+    ];
+    let Bodlogo1 = () => {
+      button.remove();
+      p.innerText = arr[0].questions;
+      button1.innerText = arr[0].answers[0];
+      button2.innerText = arr[0].answers[1];
+      button3.innerText = arr[0].answers[2];
+      button4.innerText = arr[0].answers[3];
+
+      body.appendChild(p);
+      body.appendChild(button1);
+      body.appendChild(button2);
+      body.appendChild(button3);
+      body.appendChild(button4);
+    };
+
+    button.addEventListener("click", Bodlogo1);
+  </script>
+</html>
